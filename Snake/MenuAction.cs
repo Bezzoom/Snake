@@ -11,5 +11,6 @@ namespace Snake
 		START,
 		EXIT,
 		RESTART,
+		UNDEFINED,
 	}
 }

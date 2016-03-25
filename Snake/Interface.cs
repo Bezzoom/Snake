@@ -46,8 +46,18 @@ namespace Snake
 				case ConsoleKey.Escape:
 					action = MenuAction.EXIT;
 					break;
+				default:
+					action = MenuAction.UNDEFINED;
+					break;
 			}
 			return action;
+		}
+
+		public void MenuDraw(char v)
+		{
+			Console.ForegroundColor = ConsoleColor.Green;
+			Console.SetCursorPosition(3, 29);
+			Console.WriteLine("{0}", menu);
 		}
 	}
 }
