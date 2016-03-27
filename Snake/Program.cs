@@ -39,7 +39,7 @@ namespace Snake
 				if (snake.isHitTail() || walls.isHit(snake))	// столкновение со стеной или с собственным хвостом
 				{
 					Score.MenuDraw();
-					WriteGameOver();
+					Score.MenuGameOver();
 					ConsoleKeyInfo key = Console.ReadKey();
 					switch(Score.menuAction(key.Key))			// обработка клавиш, после окончания игры
 					{
@@ -78,25 +78,6 @@ namespace Snake
 		{
 			Console.SetCursorPosition(3, 2);
 			Console.WriteLine("Выходим...");
-		}
-
-// TODO идущие нижк фуекции перенести в класс Inerface 
-// Отрисовка надписи "Игра окончена" 
-		static void WriteGameOver()
-		{
-			int xOffset = 45;
-			int yOffset = 14;
-			Console.ForegroundColor = ConsoleColor.Red;
-			Console.SetCursorPosition(xOffset, yOffset++);
-			WriteText("============================", xOffset, yOffset++);
-			WriteText("И Г Р А    О К О Н Ч Е Н А", xOffset + 1, yOffset++);
-			WriteText("============================", xOffset, yOffset++);
-		}
-
-		static void WriteText(String text, int xOffset, int yOffset)
-		{
-			Console.SetCursorPosition(xOffset, yOffset);
-			Console.WriteLine(text);
 		}
 	}
 }
