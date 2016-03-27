@@ -9,11 +9,13 @@ namespace Snake
 	class Snake : Figure
 	{
 		Direction Direction;
+		public int Speed;
 
 		public Snake(Point Tail, int Length, Direction Direction)
 		{
 			this.Direction = Direction;
 			pList = new List<Point>();
+			Speed = 400;
 
 			for (int i = 0; i < Length; i++)
 			{
@@ -84,6 +86,18 @@ namespace Snake
 				case ConsoleKey.DownArrow:
 					Direction = Direction.DOWN;
 					break;
+			}
+		}
+
+		internal void SpeedUp(int score)
+		{
+			if (Speed <= 50 && score % 10 == 0)
+			{
+				Speed = Speed - 2;
+			}
+			else if (score % 10 == 0)
+			{
+				Speed = Speed - 50;
 			}
 		}
 	}

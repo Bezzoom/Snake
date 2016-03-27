@@ -14,13 +14,12 @@ namespace Snake
 
 		MenuAction action;
 
-		public Interface(int score)
+		public Interface()
 		{
-			this.score = score;
+			this.score = 0;
 			this.label = "Ваши очки: ";
 			this.menu = "Esc - Выход\tEnter - Повтор";
 		}
-		public Interface() : this(0) { }
 
 		public void Draw()
 		{
@@ -30,6 +29,7 @@ namespace Snake
 		public void PointsUp()
 		{
 			score++;
+
 		}
 		public void MenuDraw()
 		{
@@ -55,9 +55,16 @@ namespace Snake
 
 		public void MenuDraw(char v)
 		{
-			Console.ForegroundColor = ConsoleColor.Green;
 			Console.SetCursorPosition(3, 29);
 			Console.WriteLine("{0}", menu);
+		}
+
+		public void WindowPrepare()
+		{
+			Console.WindowWidth = 120;
+			Console.WindowHeight = 31;
+			Console.Clear();
+			Console.ForegroundColor = ConsoleColor.Green;
 		}
 	}
 }

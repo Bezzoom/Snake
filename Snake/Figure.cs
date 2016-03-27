@@ -33,7 +33,7 @@ namespace Snake
 			{
 				if (p.isHit(point))
 					return true;
-			}
+			 }
 			return false;
 		}
 	}
